@@ -73,61 +73,6 @@
                     </div>
                 </div>
             </div>
-            {{-- Edit Category --}}
-            <div class="modal fade" id="EditRowModal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header no-bd">
-                            <h5 class="modal-title">
-                                <span class="fw-mediumbold">
-                                Sửa</span> 
-                                <span class="fw-light">
-                                </span>
-                            </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class="small">Sửa danh mục sản phẩm</p>
-                            <form action="{{URL::to('/edit-category-product')}}" method="POST">
-                                {{ csrf_field() }}
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group form-group-default">
-                                            <label>Tên danh mục</label>
-                                            <input name="category_name" id="category_name" type="text" class="form-control" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 pr-0">
-                                        <div class="form-group form-group-default">
-                                            <label for="comment">Mô tả</label>
-												<textarea name="category_desc" class="form-control" id="category_desc" rows="5">
-
-												</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group form-group-default">
-                                            <label>Trạng thái</label>
-												<select class="form-control" id="category_status" name="category_status">
-													<option value="1">Hiển thị</option>
-													<option value="0">Ẩn</option>
-												</select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer no-bd">
-                                    <button type="submit" id="addRowButton" class="btn btn-primary">Sửa</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                                </div>
-                            </form>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
             <div class="table-responsive">
                 <table id="add-row" class="display table table-striped table-hover" >
                     <thead>
@@ -159,7 +104,7 @@
                             </td>
                             <td>
                                 <div class="form-button-action">
-                                    <button type="button" data-toggle="modal" data-target="#EditRowModal" title="Sửa {{$cate->category_name}}" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                    <button type="button" data-toggle="modal" data-target="#EditRowModal{{$cate->category_id}}" title="Sửa {{$cate->category_name}}" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                     <button type="button" data-toggle="tooltip" title="Xóa {{$cate->category_name}}" class="btn btn-link btn-danger" data-original-title="Remove">
@@ -167,6 +112,7 @@
                                     </button>
                                 </div>
                             </td>
+                            @include('admin.pages.category.edit')
                         </tr>
                         @endforeach
                         

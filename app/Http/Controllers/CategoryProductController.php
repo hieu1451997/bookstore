@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CategoryProduct;
 use Illuminate\Support\Facades\Redirect;
+use PhpParser\Node\Expr\FuncCall;
 
 class CategoryProductController extends Controller
 {
@@ -19,6 +20,14 @@ class CategoryProductController extends Controller
             'category_desc' => $request->category_desc,
             'category_status' => $request->category_status
         ]);
+        return Redirect::to('list-category-product');
+    }
+    public function edit_category(Request $request, $category_id){
+        $data = CategoryProduct::find($category_id);
+        $data->category_name = $request->category_name;
+        $data->category_desc = $request->category_desc;
+        $data->category_status = $request->category_status;
+        $data->save();
         return Redirect::to('list-category-product');
     }
 }

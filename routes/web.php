@@ -16,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','AdminController@index');
 
 //Category
+// danh sach category
 Route::get('/list-category-product','CategoryProductController@list');
+// them category
 Route::post('/save-category-product','CategoryProductController@save_category');
+// sua category
+Route::post('/edit-category-product/{category_id}','CategoryProductController@edit_category');

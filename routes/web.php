@@ -31,3 +31,8 @@ Route::get('/list-publisher','PublisherController@list');
 // them Publisher
 Route::get('/add-publisher','PublisherController@add_publisher');
 Route::post('/save-publisher','PublisherController@save_publisher');
+// edit Publisher
+Route::get('/edit-publisher/{publisher_id}','PublisherController@edit_publisher');   
+Route::post('/update-publisher/{publisher_id}','PublisherController@update_publisher');
+// xoa publisher
+Route::post('/delete-publisher/{publisher_id}','PublisherController@delete_publisher');

@@ -12,5 +12,8 @@ class Publisher extends Model
     protected $fillable = [
         'publisher_name','publisher_address','publisher_phone','publisher_desc','publisher_status',
     ];
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
     use HasFactory;
 }

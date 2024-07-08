@@ -23,12 +23,12 @@
                     <div class="collapse" id="sanpham">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="components/avatars.html">
+                                <a href="{{URL::to('/list-product')}}">
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="components/buttons.html">
+                                <a href="{{URL::to('/add-product')}}">
                                     <span class="sub-item">Thêm mới</span>
                                 </a>
                             </li>

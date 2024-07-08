@@ -12,4 +12,7 @@ class CategoryProduct extends Model
     protected $fillable = [
         'category_name','category_desc','category_status',
     ];
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }

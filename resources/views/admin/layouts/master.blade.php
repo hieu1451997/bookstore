@@ -142,6 +142,8 @@
 	</script>
 	<script >
 		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+			});
 			$('#add-row').DataTable({
 				"pageLength": 5,
 			});

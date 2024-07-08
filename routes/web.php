@@ -36,3 +36,7 @@ Route::get('/edit-publisher/{publisher_id}','PublisherController@edit_publisher'
 Route::post('/update-publisher/{publisher_id}','PublisherController@update_publisher');
 // xoa publisher
 Route::post('/delete-publisher/{publisher_id}','PublisherController@delete_publisher');
+
+// Product
+// danh sach product
+Route::get('/list-product','ProductController@list');
